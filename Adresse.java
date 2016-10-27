@@ -38,10 +38,13 @@ class Adresse {
     final int getNr() {
         return this.nr;
     }
-    
+
+    public final void setAnwohner(final Person[] anwohner) {
+        this.anwohner = anwohner;
+    }
+
     // Einzug
-    final protected void setAnwohner(Person anwohner) { 
-        //Das ist meine änderung Silas
+    final protected void einzug(Person anwohner) {
         if(this.anwohner == null) {
             this.anwohner = new Person[1];
             this.anwohner[0] = anwohner;
@@ -60,7 +63,7 @@ class Adresse {
         return this.anwohner;
     }
 
-// weitere Funktionen
+    // weitere Funktionen
     //Braucht noch arbeit
     final void auszug(final Person person) {
         Person[] anwohner = this.getAnwohner();
@@ -73,8 +76,7 @@ class Adresse {
                     it++;
                 }
             }
-            // Darf eigentlich nicht sein müsste der Setter übernehmen; andere Funktion
-            this.anwohner = tmp;
+            setAnwohner(tmp);
         }
     }
     
