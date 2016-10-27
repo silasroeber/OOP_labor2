@@ -43,7 +43,12 @@ class Adresse {
         this.anwohner = anwohner;
     }
 
-    // Einzug
+    final Person[] getAnwohner() {
+        return this.anwohner;
+    }
+
+    // weitere Funktionen
+        // Einzug
     final protected void einzug(Person anwohner) {
         if(this.anwohner == null) {
             this.anwohner = new Person[1];
@@ -59,11 +64,6 @@ class Adresse {
         }
     }
     
-    final Person[] getAnwohner() {
-        return this.anwohner;
-    }
-
-    // weitere Funktionen
     //Braucht noch arbeit
     final void auszug(final Person person) {
         Person[] anwohner = this.getAnwohner();
