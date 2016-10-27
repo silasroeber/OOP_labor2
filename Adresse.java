@@ -40,7 +40,8 @@ class Adresse {
     }
     
     // Einzug
-    final protected void setAnwohner(Person anwohner) {   
+    final protected void setAnwohner(Person anwohner) { 
+        //Das ist meine änderung Silas
         if(this.anwohner == null) {
             this.anwohner = new Person[1];
             this.anwohner[0] = anwohner;
