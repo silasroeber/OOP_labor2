@@ -153,7 +153,7 @@ class Person {
                 this.adresse.auszug(this);
             }
             this.adresse = adresse;
-            this.adresse.setAnwohner(this);
+            this.adresse.einzug(this);
         }
     }
 
