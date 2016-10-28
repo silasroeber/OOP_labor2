@@ -49,19 +49,22 @@ class Adresse {
 
     // weitere Funktionen
         // Einzug
-    final protected void einzug(Person anwohner) {
-        if(this.anwohner == null) {
-            this.anwohner = new Person[1];
-            this.anwohner[0] = anwohner;
-        } else {
-            Person[] tmp = this.anwohner;
-            this.anwohner = new Person[this.anwohner.length + 1];
+    final protected void einzug(Person person) {
+        Person[] anwohner = this.getAnwohner();
+        Person[] tmp;
 
-            for(int i = 0; i < tmp.length; ++i) {
-                this.anwohner[i] = tmp[i];
+        if(anwohner != null) {
+            tmp = new Person[anwohner.length + 1];
+            for(int i = 0; i < anwohner.length; ++i) {
+                tmp[i] = anwohner[i];
             }
-            this.anwohner[tmp.length] = anwohner;
+            tmp[anwohner.length] = person;
+        } else {
+            tmp = new Person[1];
+            tmp[0] = person;
         }
+
+        setAnwohner(tmp);
     }
     
     //Braucht noch arbeit
