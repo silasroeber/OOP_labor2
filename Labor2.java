@@ -96,8 +96,8 @@ public class Labor2 {
         personKind2Test.setAdresse(adresse2);
         System.out.println("\n"
                     + "Kinder ziehen aus:");
-        System.out.println(adresse1.anwohnerAusgabe());
-        System.out.println(adresse2.anwohnerAusgabe());
+        System.out.println(adresse1.anwohnerString());
+        System.out.println(adresse2.anwohnerString());
         
 //------------------------------------------------------------------------------
     // Die Eltern sterben
@@ -107,11 +107,10 @@ public class Labor2 {
                     + "eltern Sterben");
         ausgabe(new Person[] {personFrauTest, personMannTest, personKind1Test, personKind2Test});
 
-        
 //------------------------------------------------------------------------------
     // Anwohner Ausgabe
-   
-     
+        System.out.println(adresse1.anwohnerString());
+        System.out.println(adresse2.anwohnerString());
     }
     
 }

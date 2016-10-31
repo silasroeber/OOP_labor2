@@ -21,7 +21,7 @@ class Person {
     private Person mutter = null;
     private Person[] kinder = null;
     // c)
-    private Adresse adresse = null;     //VEränderung!
+    private Adresse adresse = null;
 
 //------------------------------------------------------------------------------
 // Konstruktoren

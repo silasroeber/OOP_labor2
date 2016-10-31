@@ -48,8 +48,7 @@ class Adresse {
     }
 
     // weitere Funktionen
-        // Einzug
-    final protected void einzug(Person person) {
+    final void einzug(final Person person) {
         Person[] anwohner = this.getAnwohner();
         Person[] tmp;
 
@@ -66,19 +65,20 @@ class Adresse {
 
         setAnwohner(tmp);
     }
-    
-    //Braucht noch arbeit
+
     final void auszug(final Person person) {
         Person[] anwohner = this.getAnwohner();
+
         if(anwohner != null) {
             Person[] tmp = new Person[anwohner.length-1];
+
             int it = 0;
-            for(int i = 0; i < anwohner.length; ++i) {
-                if(anwohner[i] != person){
-                    tmp[it] = anwohner[i];
-                    it++;
-                }
+
+            for(Person p : anwohner) {
+                if(p == person) continue;
+                tmp[it++] = p;
             }
+
             setAnwohner(tmp);
         }
     }
@@ -88,13 +88,11 @@ class Adresse {
     public String toString() {
         return String.format("%s %d, %d %s", this.getStr(), this.getNr(), this.getPlz(), this.getOrt());
     }
-    
-   
-    public String anwohnerAusgabe() 
+
+    public String anwohnerString()
     {
         StringBuilder stringBuilder = new StringBuilder();
         Person[] anwohner = this.getAnwohner();
-        
 
         stringBuilder.append(String.format("Adresse: %s%n",
                                            this.toString()));
