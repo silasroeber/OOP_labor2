@@ -8,7 +8,7 @@ package labor2;
  * @author  Silas Röber     <silas.roeber@student.fh-kiel.de>
  */
 public class Labor2 {
-
+// Hilfsfunktionen zur Ausgabe
     public static void ausgabe(Person[] personen) 
     {
         for( Person person : personen) {

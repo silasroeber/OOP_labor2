@@ -7,7 +7,7 @@ import java.util.Date;
  * Aufgabe 2 a)
  *
  * @author  Eike Hoffmann   <eike.s.hoffmann@student.fh-kiel.de>
- *          Silas Röber     <silas.roeber@student.fh-kiel.de>
+ * @author  Silas Röber     <silas.roeber@student.fh-kiel.de>
  */
 class Datum {
 // Attribute
@@ -23,7 +23,9 @@ class Datum {
         this.setMonat(date.getMonth());
         this.setTag(date.getDay());
     }
-
+    
+    // prüft in settern ob Parameter zulässig sind, wenn nicht Fehlermeldung 
+    // -> keine neue Instanz von Datum
     Datum(final int tag, final int monat, final int jahr) throws IllegalArgumentException {
         this.setJahr(jahr);
         this.setMonat(monat);
@@ -75,6 +77,7 @@ class Datum {
     }
 
 // Ausgabefunktionen
+    // Setzt Datums Attribute in String um DD.MM.YYYY
     @Override
     public String toString() {
         return String.format("%d.%d.%d", getTag(), getMonat(), getJahr());

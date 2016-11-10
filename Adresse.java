@@ -47,7 +47,8 @@ class Adresse {
         return this.anwohner;
     }
 
-    // weitere Funktionen
+// weitere Funktionen
+    // Fügt neue Anwohner an dieser Adresse einem dynamisch wachsenden array hinzu
     final void einzug(final Person person) {
         Person[] anwohner = this.getAnwohner();
         Person[] tmp;
@@ -65,7 +66,8 @@ class Adresse {
 
         setAnwohner(tmp);
     }
-
+    
+    // entfernt Anwohner aus array und verkleinert dieses wieder
     final void auszug(final Person person) {
         Person[] anwohner = this.getAnwohner();
 
@@ -84,11 +86,13 @@ class Adresse {
     }
     
 // Ausgabefunktionen
+    // Setzt basis Attribute einer Adresse in String um
     @Override
     public String toString() {
         return String.format("%s %d, %d %s", this.getStr(), this.getNr(), this.getPlz(), this.getOrt());
     }
-
+    
+    // Setzt alle Attribute einer Adresse (inkl. Anwohner Namen) in String um
     public String anwohnerString()
     {
         StringBuilder stringBuilder = new StringBuilder();

@@ -8,6 +8,7 @@ package labor2;
  */
 class Person {
 // Attribute
+    // Notwendige Attribute zum anlegen einer Person erhalten keinen initial Wert
     private final int personalNr;
     private String anrede;
     private String vorname;
@@ -126,6 +127,7 @@ class Person {
         return this.mutter;
     }
 
+    // Liste von Kindern einer Person in dynamisch wachsendem array
     final void setKinder(Person kind) {
         if(this.kinder == null) {
             this.kinder = new Person[1];
@@ -146,9 +148,8 @@ class Person {
     }
     
     // c)
-    // Verändert
     final void setAdresse(final Adresse adresse) {
-            if(adresse != null) {
+        if(adresse != null) {
             if(this.adresse != null) {
                 this.adresse.auszug(this);
             }
@@ -163,6 +164,8 @@ class Person {
 
 //------------------------------------------------------------------------------
 // weitere Funktionen
+    // Die Person an der die funktion heiraten ausgeführt wird nimmt den nachnamen
+    // des Partners an
     public void heiraten(Person partner) {
         if(this != partner) {
             this.setEhepartner(partner);
@@ -173,6 +176,8 @@ class Person {
     
 //------------------------------------------------------------------------------
 // Ausgabe funktionen
+    // Stellt alle Attribute einer Person in einem Ausgabe String zusammen, falls
+    // belegt
     @Override
     public String toString() 
     {
@@ -214,16 +219,19 @@ class Person {
         return stringBuilder.toString();
     }
 
+    // Gibt nur Vor- und Nachname aus um keine Schleife beim Ausgeben aller
+    // Parameter zu erzeugen
     protected String ausgabeName() {
         return String.format("%s %s", this.getVorname(), this.getNachname());
     }
     
+    // Überprüft ob verwandschafts Attribute gesetzt sind
     private String ausgabePerson(final Person p) {
         return (p != null ? p.ausgabeName() : "-");
     }
 
 //------------------------------------------------------------------------------    
-// interne Klasse Builder
+// interne Klasse Builder ersetzt sich aufeinander abstützende Konstruktoren
     public static class Builder {
         private final int personalNr;
         private String anrede;
